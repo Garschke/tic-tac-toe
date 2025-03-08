@@ -154,25 +154,23 @@ def tic_tac_toe():
     turn = 0
     spot_taken = False
     game_over = False
-    player_mode = ""    # no initial selection
-                        # 1 human vs human,
-                        # 2-4 human vs machine AI
+    player_mode = ""    # no initial selection ""
     selection_made = False
 
     # Select Player Mode
-    while player_mode not in ["1","2","3","4"]:
+    while player_mode not in ["1", "2", "3", "4"]:
         clear_screen()
         print_board(board, board_info)
-        if selection_made == True:
+        if selection_made is True:
             print("\nOnly enter valid options (1-4)")
         else:
             print("\n")
         player_mode_options = """
 Select mode:
  1. Two player
- 2. One player (vs Computer - Easy)
- 3. One player (vs Computer - Medium)
- 4. One player (vs Computer - Hard)
+ 2. One player (vs Computer AI - Easy)
+ 3. One player (vs Computer AI - Medium)
+ 4. One player (vs Computer AI - Hard)
 
 """
         player_mode = input(player_mode_options)
