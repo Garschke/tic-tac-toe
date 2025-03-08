@@ -15,7 +15,7 @@ This is a command-line Tic Tac Toe game built using Python. It supports a two-pl
 ## 🛠 Features
 ✅ Command-line interface for a classic feel.  
 ✅ 2-player mode.  
-✅ AI opponent with selectable difficulty (coming soon).  
+✅ AI opponent with selectable difficulty (tic_tac_toe_v0.2.py).  
 ✅ Input validation to prevent invalid moves.  
 ✅ Automatic win/draw detection.  
 
@@ -34,11 +34,11 @@ This is a command-line Tic Tac Toe game built using Python. It supports a two-pl
    ```
 3. Run the game:
    ```sh
-   python tic_tac_toe.py
+   python tic_tac_toe_v0.2.py
    ```
 
 ## 🔮 Future Improvements
-- [ ] Implement AI difficulty levels: Easy, Medium, Hard.
+ ✅ Implement AI difficulty levels: Easy, Medium, Hard.
 - [ ] Enhance board visuals.
 - [ ] Add a GUI version using Tkinter or Pygame.
 
