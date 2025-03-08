@@ -59,8 +59,10 @@ def clear_screen():
 
 def tic_tac_toe():
     """Main function to run the Tic Tac Toe game."""
-    board = [[EMPTY_CELL for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
-    board_info = [[str(i + 1 + j * BOARD_SIZE) for i in range(BOARD_SIZE)] for j in range(BOARD_SIZE)]
+    board = [[EMPTY_CELL for _ in range(BOARD_SIZE)]
+             for _ in range(BOARD_SIZE)]
+    board_info = [[str(i + 1 + j * BOARD_SIZE)
+                   for i in range(BOARD_SIZE)] for j in range(BOARD_SIZE)]
     players = [PLAYER_X, PLAYER_O]
     turn = 0
     spot_taken = False
