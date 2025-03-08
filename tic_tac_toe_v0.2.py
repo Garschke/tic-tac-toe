@@ -1,6 +1,5 @@
 import os
-from random import randint
-import random
+from random import choice
 
 BOARD_SIZE = 3
 PLAYER_X = "X"
@@ -56,14 +55,15 @@ def get_move():
 
 def get_easy_ai_move(board, ai_marker, player_marker):
     """Get a random move for the AI."""
-    empty_cells = [(r, c) for r in range(3) for c in range(3) if board[r][c] == " "]
-    return random.choice(empty_cells)
+    empty_cells = [(r, c) for r in range(BOARD_SIZE) for c in range(BOARD_SIZE)
+                   if board[r][c] == " "]
+    return choice(empty_cells)
 
 
 def get_medium_ai_move(board, ai_marker, player_marker):
     # Check if AI can win in the next move
-    for row in range(3):
-        for col in range(3):
+    for row in range(BOARD_SIZE):
+        for col in range(BOARD_SIZE):
             if board[row][col] == " ":
                 board[row][col] = ai_marker
                 if check_winner(board, ai_marker):
@@ -71,8 +71,8 @@ def get_medium_ai_move(board, ai_marker, player_marker):
                 board[row][col] = " "  # Undo move
 
     # Check if the player can win in the next move and block
-    for row in range(3):
-        for col in range(3):
+    for row in range(BOARD_SIZE):
+        for col in range(BOARD_SIZE):
             if board[row][col] == " ":
                 board[row][col] = player_marker
                 if check_winner(board, player_marker):
@@ -80,14 +80,16 @@ def get_medium_ai_move(board, ai_marker, player_marker):
                 board[row][col] = " "  # Undo move
 
     # Prioritize center, then corners, then other spots
-    priority_moves = [(1, 1), (0, 0), (0, 2), (2, 0), (2, 2), (0, 1), (1, 0), (1, 2), (2, 1)]
+    priority_moves = [(1, 1), (0, 0), (0, 2), (2, 0), (2, 2),
+                      (0, 1), (1, 0), (1, 2), (2, 1)]
     for row, col in priority_moves:
         if board[row][col] == " ":
             return row, col
 
     # If no other move is found, pick randomly
-    empty_cells = [(r, c) for r in range(3) for c in range(3) if board[r][c] == " "]
-    return random.choice(empty_cells)
+    empty_cells = [(r, c) for r in range(BOARD_SIZE) for c in range(BOARD_SIZE)
+                   if board[r][c] == " "]
+    return choice(empty_cells)
 
 
 def minimax(board, depth, is_maximizing, ai_marker, player_marker):
@@ -104,7 +106,8 @@ def minimax(board, depth, is_maximizing, ai_marker, player_marker):
             for col in range(3):
                 if board[row][col] == " ":
                     board[row][col] = ai_marker
-                    score = minimax(board, depth + 1, False, ai_marker, player_marker)
+                    score = minimax(board, depth + 1, False, ai_marker,
+                                    player_marker)
                     board[row][col] = " "  # Undo move
                     best_score = max(score, best_score)
         return best_score
@@ -114,7 +117,8 @@ def minimax(board, depth, is_maximizing, ai_marker, player_marker):
             for col in range(3):
                 if board[row][col] == " ":
                     board[row][col] = player_marker
-                    score = minimax(board, depth + 1, True, ai_marker, player_marker)
+                    score = minimax(board, depth + 1, True, ai_marker,
+                                    player_marker)
                     board[row][col] = " "  # Undo move
                     best_score = min(score, best_score)
         return best_score
@@ -150,7 +154,9 @@ def tic_tac_toe():
     turn = 0
     spot_taken = False
     game_over = False
-    player_mode = ""  # initially no selection 1 human vs human, 2 human vs machine...
+    player_mode = ""    # no initial selection
+                        # 1 human vs human,
+                        # 2-4 human vs machine AI
     selection_made = False
 
     # Select Player Mode
