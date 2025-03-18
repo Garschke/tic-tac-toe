@@ -123,6 +123,7 @@ def minimax(board, depth, is_maximizing, ai_marker, player_marker):
                     best_score = min(score, best_score)
         return best_score
 
+
 def get_hard_ai_move(board, ai_marker, player_marker):
     best_score = -float('inf')
     best_move = None
@@ -217,7 +218,13 @@ Select mode:
 
         if check_winner(board, players[turn]):
             print(gameover)
-            print(f"\n\nPlayer {players[turn]} wins!\n\n")
+            if player_mode == "1":
+                print(f"\n\nPlayer {players[turn]} wins!\n\n")
+            else:
+                if players[turn] == PLAYER_X:
+                    print("\n\nYou win!\n\n")
+                else:
+                    print("\n\nComputer wins!\n\n")
             game_over = True
 
         elif is_draw(board):

@@ -13,11 +13,11 @@ This is a command-line Tic Tac Toe game built using Python. It supports a two-pl
 5. If all spaces are filled and no one wins, the game ends in a draw.
 
 ## 🛠 Features
-✅ Command-line interface for a classic feel.  
-✅ 2-player mode.  
-✅ AI opponent with selectable difficulty (tic_tac_toe_v0.2.py).  
-✅ Input validation to prevent invalid moves.  
-✅ Automatic win/draw detection.  
+✅ Command-line interface for a classic feel.
+✅ 2-player mode.
+✅ AI opponent with selectable difficulty (tic_tac_toe_v0.2.py).
+✅ Input validation to prevent invalid moves.
+✅ Automatic win/draw detection.
 
 ## 🚀 Installation & Setup
 ### **Prerequisites:**
@@ -34,8 +34,16 @@ This is a command-line Tic Tac Toe game built using Python. It supports a two-pl
    ```
 3. Run the game:
    ```sh
-   python tic_tac_toe_v0.2.py
+   python3 tic_tac_toe_v0.2.py
    ```
+
+## 🖥️ Demo
+Screenshot showing program in action.
+Starting screen with player modes.
+![Screenshot of Starting screen](src/tic-tac-toe.png)
+
+Game Over screen - result draw or winner.
+![Screenshot of Starting screen](src/tic-tac-toe_game_over.png)
 
 ## 🔮 Future Improvements
  ✅ Implement AI difficulty levels: Easy, Medium, Hard.
@@ -44,6 +52,12 @@ This is a command-line Tic Tac Toe game built using Python. It supports a two-pl
 
 ## 🤝 Contributing
 Feel free to fork the repo and submit pull requests!
+
+## 🐍 Fork the repository.
+1. Create your feature branch: git checkout -b feature/NewFeature
+2. Commit your changes: git commit -m 'Add new feature'
+3. Push to the branch: git push origin feature/NewFeature
+4. Open a pull request.
 
 ## 📜 License
 This project is open-source and available under the MIT License.
