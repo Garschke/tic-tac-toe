@@ -1,7 +1,7 @@
 # Tic Tac Toe (Python)
 
 ## 📌 Overview
-This is a command-line Tic Tac Toe game built using Python. It supports a two-player mode and will soon include an AI opponent with three difficulty levels: Easy, Medium, and Hard.
+This is a command-line Tic Tac Toe game built using Python. It supports a two-player mode and also includes an AI opponent with three difficulty levels: Easy, Medium, and Hard.
 
 ## 🎮 How to Play
 1. Run the script in a terminal.
